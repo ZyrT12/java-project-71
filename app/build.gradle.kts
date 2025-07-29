@@ -4,11 +4,21 @@ plugins {
     application
     jacoco
     checkstyle
+    id("org.sonarqube") version "6.2.0.5505"
 }
 
 
 application {
     mainClass.set("hexlet.code.App")
+}
+
+sonar {
+    properties {
+        property("sonar.projectKey", "ZyrT12_java-project-71")
+        property("sonar.organization", "zyrt12")
+        property("sonar.host.url", "https://sonarcloud.io")
+        property("sonar.token", System.getenv("SONAR_TOKEN"))
+    }
 }
 
 group = "hexlet.code"
