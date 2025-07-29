@@ -29,13 +29,15 @@ public class App implements Runnable {
         try {
             Map<String, Object> data1 = Differ.parseJsonFile(filepath1);
             Map<String, Object> data2 = Differ.parseJsonFile(filepath2);
-            System.out.println("File 1 parsed successfully: " + data1.keySet());
-            System.out.println("File 2 parsed successfully: " + data2.keySet());
+
+            String diff = Differ.generate(data1, data2);
+            System.out.println(diff);
         } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());
             System.exit(1);
         }
     }
+
 
     public static void main(String[] args) {
         int exitCode = new CommandLine(new App()).execute(args);
