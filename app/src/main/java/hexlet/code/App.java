@@ -27,10 +27,7 @@ public class App implements Runnable {
     @Override
     public void run() {
         try {
-            Map<String, Object> data1 = Differ.parseJsonFile(filepath1);
-            Map<String, Object> data2 = Differ.parseJsonFile(filepath2);
-
-            String diff = Differ.generate(data1, data2);
+            String diff = Differ.generate(filepath1, filepath2);
             System.out.println(diff);
         } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());
