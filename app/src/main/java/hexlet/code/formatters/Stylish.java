@@ -35,7 +35,7 @@ public class Stylish {
 
     private static Object formatValue(Object value) {
         return value instanceof Map || value instanceof List
-                ? value.toString().replace("=", ": ")
+                ? value.toString()
                 : value;
     }
 }
