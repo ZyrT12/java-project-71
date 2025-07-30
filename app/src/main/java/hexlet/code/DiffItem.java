@@ -13,13 +13,9 @@ public class DiffItem {
         this.newValue = newValue;
     }
 
-
+    // Геттеры
     public DiffType getType() { return type; }
     public String getKey() { return key; }
     public Object getOldValue() { return oldValue; }
     public Object getNewValue() { return newValue; }
-}
-
-enum DiffType {
-    ADDED, REMOVED, CHANGED, UNCHANGED
 }
