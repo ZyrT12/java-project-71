@@ -13,6 +13,8 @@ public class Parser {
         ObjectMapper mapper = filePath.endsWith(".json")
                 ? new ObjectMapper()
                 : new YAMLMapper();
-        return mapper.readValue(content, new TypeReference<>() {});
+        return mapper.readValue(content, new TypeReference<>() {
+
+        });
     }
 }

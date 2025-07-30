@@ -17,3 +17,6 @@ _Example of how the package works_
 
 ![Example of how the package works (Yml)](image/Task10.png)
 _Example of how the package works_
+
+![Example of how the package works (Yml)](image/Task11.png)
+_Example of how the package works_

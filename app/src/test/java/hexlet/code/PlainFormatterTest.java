@@ -4,9 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 import org.junit.jupiter.api.Test;
-
-import hexlet.code.DiffItem;
-import hexlet.code.DiffType;
 import hexlet.code.formatters.Plain;
 
 public class PlainFormatterTest {
@@ -28,3 +25,4 @@ public class PlainFormatterTest {
         assertEquals(expected, Plain.format(diff));
     }
 }
+

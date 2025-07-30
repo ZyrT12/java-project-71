@@ -25,6 +25,9 @@ public class Stylish {
                     result.append(String.format("  + %s: %s\n",
                             item.getKey(), formatValue(item.getNewValue())));
                 }
+                default -> {
+                    throw new IllegalStateException("Unexpected value: " + item.getType());
+                }
             }
         }
         return result.append("}").toString();
