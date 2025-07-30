@@ -1,6 +1,6 @@
 package hexlet.code;
 
-public class DiffItem {
+public final class DiffItem {
     private final DiffType type;
     private final String key;
     private final Object oldValue;
@@ -16,12 +16,15 @@ public class DiffItem {
     public DiffType getType() {
         return type;
     }
+
     public String getKey() {
         return key;
     }
+
     public Object getOldValue() {
         return oldValue;
     }
+
     public Object getNewValue() {
         return newValue;
     }
