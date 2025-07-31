@@ -1,29 +1,33 @@
 package hexlet.code;
-
 public final class DiffItem {
     private final String key;
     private final Object oldValue;
     private final Object newValue;
     private final DiffType status;
 
-    public DiffItem(DiffType status, String key, Object oldValue, Object newValue) {
-        this.key = key;
-        this.oldValue = oldValue;
-        this.newValue = newValue;
-        this.status = status;
+    public DiffItem(final DiffType statusType,
+                    final String itemKey,
+                    final Object oldVal,
+                    final Object newVal) {
+        this.status = statusType;
+        this.key = itemKey;
+        this.oldValue = oldVal;
+        this.newValue = newVal;
     }
 
     public String getKey() {
-        return key;
+        return this.key;
     }
+
     public Object getOldValue() {
-        return oldValue;
-}
+        return this.oldValue;
+    }
 
     public Object getNewValue() {
-        return newValue;
+        return this.newValue;
     }
+
     public DiffType getStatus() {
-        return status;
+        return this.status;
     }
 }

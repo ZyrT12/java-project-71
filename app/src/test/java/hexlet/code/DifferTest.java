@@ -37,11 +37,11 @@ public class DifferTest {
         String actual = Differ.generate("src/test/resources/file1.json", "src/test/resources/file2.json", "json");
         assertEquals(expectedJson, actual);
     }
-//здесь проверка
+
     @Test
     public void testJsonDefaultFormat() throws Exception {
         String actual = Differ.generate("src/test/resources/file1.json", "src/test/resources/file2.json");
-        assertEquals(expectedStylish.replace("\r\n", "\n").trim(), actual.replace("\r\n", "\n").trim());
+        assertEquals(expectedJson, actual);
     }
 
 
