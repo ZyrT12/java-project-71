@@ -20,7 +20,7 @@ public final class App implements Runnable {
     private String filepath2;
 
     @Option(names = {"-f", "--format"}, description = "output format [default: stylish]")
-    private String format = "stylish";
+    private String format;
 
     @Override
     public void run() {
