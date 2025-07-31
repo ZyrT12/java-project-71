@@ -19,13 +19,13 @@ public class DiffBuilder {
             Object value2 = data2.get(key);
 
             if (!data2.containsKey(key)) {
-                diff.add(new DiffItem(DiffType.REMOVED, key, value1, null));
+                diff.add(new DiffItem(DiffType.removed, key, value1, null));
             } else if (!data1.containsKey(key)) {
-                diff.add(new DiffItem(DiffType.ADDED, key, null, value2));
+                diff.add(new DiffItem(DiffType.added, key, null, value2));
             } else if (Objects.equals(value1, value2)) {
-                diff.add(new DiffItem(DiffType.UNCHANGED, key, value1, value2));
+                diff.add(new DiffItem(DiffType.unchanged, key, value1, value2));
             } else {
-                diff.add(new DiffItem(DiffType.CHANGED, key, value1, value2));
+                diff.add(new DiffItem(DiffType.updated, key, value1, value2));
             }
         }
 

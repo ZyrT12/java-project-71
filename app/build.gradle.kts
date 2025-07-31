@@ -44,16 +44,23 @@ jacoco {
     toolVersion = "0.8.10"
 }
 
-/*jacocoTestReport {
+tasks.jacocoTestReport {
+    dependsOn(tasks.test)
 
     reports {
-
         xml.required.set(true)
+        html.required.set(true)
     }
-    classDirectories.setFrom(
-        fileTree("build/classes/java/main") {
-        }
-    )
-    sourceDirectories.setFrom(files("src/main/java"))
-    executionData.setFrom(fileTree(buildDir).include("jacoco/test.exec"))
+}
+
+tasks.test {
+    finalizedBy(tasks.jacocoTestReport)
+}
+
+
+sonar {
+    properties {
+        property("sonar.junit.reportPaths", "build/test-results/test")
+        property("sonar.jacoco.reportPaths", "build/jacoco/test.exec")
+    }
 }

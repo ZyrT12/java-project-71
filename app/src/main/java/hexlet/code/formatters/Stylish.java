@@ -9,24 +9,24 @@ public class Stylish {
         StringBuilder result = new StringBuilder("{\n");
 
         for (DiffItem item : diff) {
-            switch (item.getType()) {
-                case ADDED ->
+            switch (item.getStatus()) {
+                case added ->
                         result.append(String.format("  + %s: %s\n",
                                 item.getKey(), formatValue(item.getNewValue())));
-                case REMOVED ->
+                case removed ->
                         result.append(String.format("  - %s: %s\n",
                                 item.getKey(), formatValue(item.getOldValue())));
-                case UNCHANGED ->
+                case unchanged ->
                         result.append(String.format("    %s: %s\n",
                                 item.getKey(), formatValue(item.getOldValue())));
-                case CHANGED -> {
+                case updated -> {
                     result.append(String.format("  - %s: %s\n",
                             item.getKey(), formatValue(item.getOldValue())));
                     result.append(String.format("  + %s: %s\n",
                             item.getKey(), formatValue(item.getNewValue())));
                 }
                 default -> {
-                    throw new IllegalStateException("Unexpected value: " + item.getType());
+                    throw new IllegalStateException("Unexpected value: " + item.getStatus());
                 }
             }
         }

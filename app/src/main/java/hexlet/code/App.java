@@ -19,7 +19,11 @@ public final class App implements Runnable {
     @Parameters(index = "1", paramLabel = "filepath2", description = "path to second file")
     private String filepath2;
 
-    @Option(names = {"-f", "--format"}, description = "output format [default: stylish]")
+    @Option(
+            names = {"-f", "--format"},
+            description = "output format [default: stylish]",
+            defaultValue = "stylish"
+    )
     private String format;
 
     @Override
@@ -32,7 +36,6 @@ public final class App implements Runnable {
             System.exit(1);
         }
     }
-
 
     public static void main(String[] args) {
         int exitCode = new CommandLine(new App()).execute(args);

@@ -10,10 +10,10 @@ public class PlainFormatterTest {
     @Test
     public void testFormat() {
         List<DiffItem> diff = List.of(
-                new DiffItem(DiffType.ADDED, "key", null, "value"),
-                new DiffItem(DiffType.REMOVED, "key2", "old", null),
-                new DiffItem(DiffType.CHANGED, "key3", "old", "new"),
-                new DiffItem(DiffType.CHANGED, "key4", List.of(1, 2), "simple")
+                new DiffItem(DiffType.added, "key", null, "value"),
+                new DiffItem(DiffType.removed, "key2", "old", null),
+                new DiffItem(DiffType.updated, "key3", "old", "new"),
+                new DiffItem(DiffType.updated, "key4", List.of(1, 2), "simple")
         );
 
         String expected = """

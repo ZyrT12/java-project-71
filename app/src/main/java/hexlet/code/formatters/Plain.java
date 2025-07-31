@@ -10,15 +10,15 @@ public class Plain {
         StringBuilder result = new StringBuilder();
 
         for (DiffItem item : diff) {
-            switch (item.getType()) {
-                case ADDED:
+            switch (item.getStatus()) {
+                case added:
                     result.append(String.format("Property '%s' was added with value: %s\n",
                             item.getKey(), formatValue(item.getNewValue())));
                     break;
-                case REMOVED:
+                case removed:
                     result.append(String.format("Property '%s' was removed\n", item.getKey()));
                     break;
-                case CHANGED:
+                case updated:
                     result.append(String.format("Property '%s' was updated. From %s to %s\n",
                             item.getKey(), formatValue(item.getOldValue()),
                             formatValue(item.getNewValue())));
