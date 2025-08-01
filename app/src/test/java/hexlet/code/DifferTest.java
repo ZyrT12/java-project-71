@@ -40,7 +40,7 @@ public class DifferTest {
 
     @Test
     public void testJsonDefaultFormat() throws Exception {
-        String actual = Differ.generate("src/test/resources/file1.json", "src/test/resources/file2.json");
+        String actual = Differ.generate("src/test/resources/file1.json", "src/test/resources/file2.json", "json");
         assertEquals(expectedJson, actual);
     }
 
